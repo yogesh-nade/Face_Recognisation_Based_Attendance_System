@@ -1,0 +1,86 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Heading at the top center */
+h1 {
+    margin-top: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Right side: Camera feed */
+.camera-box {
+    width: 48%;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.camera-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Left side: Employee/Student details */
+.details-box {
+    width: 48%;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Employee name and ID styling */
+h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Buttons container (stacked vertically) */
+.action-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}

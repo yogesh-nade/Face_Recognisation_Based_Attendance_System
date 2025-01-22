@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='captureStud.css') }}">
+</head>
+<body>
+    <h1>Capture Image</h1> <!-- Heading at the top center -->
+
+    <div class="container">
+        <!-- Camera Feed (Right) -->
+        <div class="camera-box">
+            <h3>Camera View</h3>
+            <img src="{{ url_for('video') }}" alt="Camera Feed">
+        </div>
+
+        <!-- Student Details (Left) -->
+        <div class="details-box">
+            <h2>Student: {{ name }} </h2>
+            <h2>ID: {{ emp_id }}</h2>
+
+            <!-- Capture & Back buttons (stacked vertically) -->
+            <div class="action-buttons">
+                <form method="POST" action="{{ url_for('capture') }}">
+                    <button type="submit">Capture Image</button>
+                </form>
+                <button onclick="window.location.href='/'">Back to Home</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Attendance System</title>
+    <link rel="stylesheet" href="../static/index.css">
+    <script>
+        window.onload = function() {
+            var message = "{{ message }}";
+            if (message && message !== "None") {
+                alert(message); // Show the pop-up alert
+            }
+        };
+    </script>
+    
+</head>
+<body >
+    <header>
+        <h1>Face Recognition Attendance System</h1>
+    </header>
+
+    <main>
+        <div class="features">
+            <div class="feature-box">
+                <h2>Add Student</h2>
+                <button onclick="redirectTo('/add_student')">Go</button>
+            </div>
+            <div class="feature-box">
+                <h2>Face Recognition</h2>
+                <button onclick="redirectTo('/recognize_face')">Go</button>
+            </div>
+            <div class="feature-box">
+                <h2>Statistical Data</h2>
+                <button onclick="redirectTo('/visualize_data')">Go</button>
+            </div>
+        </div>
+    </main>
+    <section class="about-us">
+        <h2>About Us</h2>
+        <p>Welcome to the <strong>Face Recognition Attendance System</strong>. Our mission is to provide a seamless and efficient way of marking attendance using cutting-edge <strong>computer vision</strong> and <strong>machine learning</strong> technologies.</p>
+        
+        <p>This system automates the attendance process by recognizing faces, eliminating the need for manual entries or biometric devices. It ensures accuracy, security, and real-time tracking of attendance records.</p>
+
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li>Quick and accurate face recognition for attendance marking.</li>
+            <li>Secure student data storage and management.</li>
+            <li>Detailed analytics and visual reports on attendance trends.</li>
+            <li>Easy-to-use interface for adding students and managing records.</li>
+        </ul>
+
+        <p>Designed for schools, colleges, and workplaces, our system simplifies the attendance process while reducing fraud and errors.</p>
+    </section>
+
+
+    <footer>
+       
+        <p>&copy; 2025 Face Recognition System. All rights reserved.</p>
+    </footer>
+
+    <script src="../static/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition</title>
+    <link rel="stylesheet" href="../static/recognize_face.css">
+    <script>
+        // Function to fetch updated logs every 3 seconds
+        function updateLogs() {
+            fetch('/get_latest_logs')
+            .then(response => response.json())
+            .then(data => {
+                let tableBody = document.getElementById("log-entries");
+                tableBody.innerHTML = "";
+                
+                data.forEach(record => {
+                    let row = `<tr>
+                        <td>${record.timestamp}</td>
+                        <td>${record.emp_id}</td>
+                        <td>${record.name}</td>
+                        <td>${record.action}</td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            });
+        }
+
+        // Refresh logs every 3 seconds
+        setInterval(updateLogs, 3000);
+    </script>
+</head>
+<body>
+    <h1>Face Recognition Attendance</h1>
+
+    <div class="container">
+        <!-- Left Box: Camera View -->
+        <div class="camera-box">
+            <h2>Camera View</h2>
+            <img src="{{ url_for('facerec_video') }}" alt="Face Recognition Video Stream">
+        </div>
+
+        <!-- Right Box: Attendance Log -->
+        <div class="log-box">
+            <h2>Recent Attendance Logs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="log-entries">
+                    {% for record in records %}
+                    <tr>
+                        <td>{{ record.timestamp }}</td>
+                        <td>{{ record.emp_id }}</td>
+                        <td>{{ record.name }}</td>
+                        <td>{{ record.action }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="button-container">
+                <button onclick="window.location.href='/'">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

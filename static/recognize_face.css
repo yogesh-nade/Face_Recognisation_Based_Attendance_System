@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+/* Ensure both boxes have the same height */
+.camera-box, .log-box {
+    flex: 1;
+    max-width: 48%;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px; /* Set a minimum height for both boxes */
+}
+
+/* Camera Box */
+.camera-box img {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* Adjust height to match table */
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+/* Attendance Log Box */
+.log-box {
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+/* Ensure button stays at the bottom */
+.button-container {
+    text-align: center;
+    margin-top: auto;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}

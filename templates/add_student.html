@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Face Recognition System</title>
+    <link rel="stylesheet" href="../static/addStudent.css">
+    <script>
+        // Show pop-up message if there is a message
+        window.onload = function() {
+            var message = "{{ message }}";
+            if (message) {
+                alert(message); // Show the pop-up with the message
+            }
+        };
+
+        // Function to submit the form and trigger capture
+        function captureImage() {
+            document.getElementById("employee-form").submit();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>User Details</h1>
+        <form action="{{ url_for('details') }}" method="POST">
+            <label for="name">Employee Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="emp_id">Employee ID:</label>
+            <input type="text" id="emp_id" name="emp_id" required>
+
+            <div class="action-buttons">
+                <button type="submit">Submit</button>
+                <button type="button" onclick="window.location.href='/'">Back to Home</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</body>
+</html>
